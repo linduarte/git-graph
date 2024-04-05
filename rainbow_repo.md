@@ -6,19 +6,24 @@ title: Rainbow repo
 ---
 
 ```mermaid
+%%{init: { 'logLevel': 'debug', 'theme': 'base', 'gitGraph': {'showBranches': true, 'showCommitLabel':true,'mainBranchOrder': 0}} }%%
 
 
-gitGraph TB:
+gitGraph LR:
     commit id:"red"
     commit id:"orange"
     branch feature
     commit id:"yellow"
+    merge main
 
 ```
 
-$ git hist
-b0612f2 2024-03-22 Charles Duarte (HEAD -> feature) yellow
-923bb68 2024-03-22 Charles Duarte (main) orange
+$ git hist  
+
+b0612f2 2024-03-22 Charles Duarte (HEAD -> feature) yellow  
+
+923bb68 2024-03-22 Charles Duarte (main) orange  
+
 12a73ff 2024-03-22 Charles Duarte red
 
-O id foi trocado do hash pelas cores que são colocadas na mensagem do 'commit'
+Os hashs (b0612f2...) foram alterados pelas cores nas mensagens de 'commit'.
