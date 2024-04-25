@@ -14,8 +14,6 @@ gitGraph TB:
 
     commit id:"red"
    
-    
-
 ```
 
 ---
