@@ -362,3 +362,70 @@ Click on "Publish release".
 
 Summary
 By following these steps, you will create an annotated tag, a branch from that tag, and publish a release on GitHub. This makes it easy to distribute your code and binaries, and provides a clear version history for your project.
+
+## Versioning strategies ##
+
+I decided to fetch the latest tab (not necessarily a release) so the code is reflecting this option. Now I'll follow the instructions you gave me to create an annotated Tag and Branch. Just one doubt - minor changes in the code should be change the Tag?
+
+Whether or not to create a new tag for minor changes in your code depends on your versioning strategy. Here are some guidelines to help you decide:
+
+### Semantic Versioning ###
+
+Semantic Versioning (SemVer) is a popular versioning scheme that uses a three-part version number: MAJOR.MINOR.PATCH.
+
+MAJOR: Incremented for incompatible API changes.
+
+MINOR: Incremented for backwards-compatible functionality.
+
+PATCH: Incremented for backwards-compatible bug fixes.
+
+For example, version 1.2.3 means:
+
+1 is the major version.
+
+2 is the minor version.
+
+3 is the patch version.
+
+When to Create a New Tag
+
+Major Changes: If you make major changes to the code that break compatibility, you should increment the MAJOR version and create a new tag.
+
+Minor Changes: For minor changes that add new features but remain backward-compatible, increment the MINOR version and create a new tag.
+
+Patch Changes: For minor bug fixes or patches, increment the PATCH version and create a new tag.
+
+#### Example Workflow ####
+
+Assuming your current version is 1.0.0:
+
+Patch Changes: For minor bug fixes, you would tag the new version as 1.0.1.
+
+```bash
+git tag -a v1.0.1 -m "Patch: Fixed minor bug in feature X"
+git push origin v1.0.1
+```
+
+Minor Changes: For backward-compatible new features, you would tag the new version as 1.1.0.
+
+```bash
+git tag -a v1.1.0 -m "Minor: Added feature Y"
+git push origin v1.1.0
+```
+
+Major Changes: For incompatible changes, you would tag the new version as 2.0.0.
+
+```bash
+git tag -a v2.0.0 -m "Major: Breaking changes in API"
+git push origin v2.0.0
+```
+
+Best Practices
+Consistent Versioning: Follow a consistent versioning strategy (like SemVer) to keep track of changes.
+
+Documentation: Document the changes in your version history or release notes to keep track of what has changed between versions.
+
+Automate: Consider using tools to automate versioning and releasing, especially for larger projects.
+
+Summary
+For minor changes, increment the PATCH version and create a new tag. For new features, increment the MINOR version. For breaking changes, increment the MAJOR version. Following a consistent versioning strategy like Semantic Versioning will help you manage your code versions effectively.
