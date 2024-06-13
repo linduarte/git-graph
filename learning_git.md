@@ -1,62 +1,61 @@
-Learning Git - Anna Skoulikari
+<!--markdownlint-disable MD041-->
+### Learning Git - Anna Skoulikari
 
 Special notes extract from the book chapter by chapter
 
 _**Chapter 2 - Local Repositories**_
 
 The four important areas when working with 'Git':
-    Working directory
-    The staging area
-    The commit history
-    Local repository
 
-A local repository is represented by a hidden directory '<!-- .git -->' that exists within a project directory.
+Working directory  
+The staging area  
+The commit history  
+Local repository
+  
+A local repository is represented by a hidden directory  _**.git**_  that exists within a project directory.
 
-Normally Git users initialize a Git repository by using '<!-- git ini -->t' command with no additional options; however,
-in the Rainbow project, you will initialize the repository by using <!-- git init --> with -b option (which is short for --initial-branch)
+Normally Git users initialize a Git repository by using _**.git**_  the command with no additional options; however,
+in the Rainbow project, you will initialize the repository by using _**git init**_ with -b option (which is short for --initial-branch)
 and pass in the name main.
 
 ```bash
 rainbow $ git init -b main
-
 ```
 
- **Working directory**
+_**Working directory**_
 
- ![alt text](new_chapter3_rd.png)
+ ![alt text](images/new_chapter3_a.png)
 
   It contains the files and directories in the project directory that represent one version of a project.
   It´s like a workbench where you add, edit and delete files and directories.
 
-  **Staging area**
+_**Staging area**_
   
-  It´s similar to a rough draft space. It is where you can add and remove files, when you are preparing what you
-  want to include in the next saved version of your project (your next commit).
-  The staging area is represented by a file in the <!-- .git --> directory called index.
+  It´s similar to a rough draft space. It is where you can add and remove files, when you are preparing what you want to include in the next saved version of your project (your next commit).  
+  The staging area is represented by a file in the _**.git**_ directory called index.
   The index file is created only if you have added at least one file to the staging area in your project.
 
-  **What is a commit?**
+_**What is a commit?**_
   
 A commit in Git is basically one version of a project. You can think of it as a snapshot of a project , or a standalone
-version of a project that contains references to all the files that are part of that commit
+version of a project that contains references to all the files that are part of that commit.
 
 Every commit has a _hash_ (sometimes called a commit ID). This is a unique 40-character hash composed of letters and numbers that acts like a name for the commit, providing a way to refer to it.
 
 An example of a commit hash is  3e432908a9fc08e44b2ea9c37be60615fcf4739a.
 
-In reality, you only need the first characters of a commit hash to refer to a commit. So,
-for the example hash just given , you can just use 3e43290 to refer to the commit.
+In reality, you only need the first characters of a commit hash to refer to a commit. So, for the example hash just given , you can just use 3e43290 to refer to the commit.
 
-**Introducing the commit history**
+_**Introducing the commit history**_
 
-The commit history is where you can think of your commits existing. It is represented by the <!-- objects --> directory inside the <!-- .git --> directory.
+The commit history is where you can think of your commits existing. It is represented by the _objects_ directory inside the _**.git**_ directory.
 
-**Adding a file to a git project**
+_**Adding a file to a git project**_
 
-Use your editor to create a file called rainbowcolors.txt inside your rainbow project directory.
+Use your editor to create a file called 'rainbowcolors.txt' inside your rainbow project directory.
 On line one add "Red is the first color of the rainbow." and save the file.
 
-  What to notice:
+  _**What to notice:**_  
   The rainbowcolors.txt file is inside the rainbow project directory; therefore, it is in the working directory.
 
   Even though the rainbowcolors.txt file is in the working directory, it is not part of your repository. It has not been added to the staging area and it has not yet been included in a commit in the commit history.
@@ -68,7 +67,7 @@ On line one add "Red is the first color of the rainbow." and save the file.
 
   Committing is important because it allows you to back up your work and avoid the frustration of losing unsaved work.Once you´ve made a commit, that work is saved, and you´ll be able to go back and look at that commit to see what your project looked like at that point in time.
 
-  **The two steps to make a commit**
+  _**The two steps to make a commit**_
 
 - [ ] Add all files you want to include in the next commit to the staging area.
 - [ ] Make a commit with a commit message.
@@ -81,13 +80,13 @@ rainbow $ git status
 
  What to notice:
 
-- [ ] - [ ]  The <!-- git status --> output informs you there are 'No commits yest'. In other words, the commit history does not contain commits at this time.
+- [ ] - [ ]  The _git status_ output informs you there are 'No commits yest'. In other words, the commit history does not contain commits at this time.
 
 - [ ]  The rainbowcolors.txt file is an untracked file.
 
-- [ ]  Git gives you the instructions that you need to add the untracked file to the staging area: 'use "git add <file>..." to include in what will be committed.
+- [ ]  Git gives you the instructions that you need to add the untracked file to the staging area: 'use "git add _file_" to include in what will be committed.
 
-**Adding files to the staging area**
+_**Adding files to the staging area**_
 
 To add files to the staging area, you use the 'git add' command. If you want do add individual files that you have edited to the staging area, the you can pass in the filename or filenames to the git add command as arguments.
 To add all the files you have edited or changed in your working directory, you can use 'git add' command with the '-A' option, (which stands for "all").
@@ -100,16 +99,16 @@ git add <filename> <filename> ...
 git add -A
 ```
 
-![alt text](new_chapter3_a.png)
+![alt text](images/new_chapter3_rd.png)
   
-**Make a commit**
+_**Make a commit**_
 
 It's important to note that commit is both a verb and a noun. In Git, the verb _'to commit'_ means to save something, and
 the noun (a commit) means a version of a project.
 
 `git commit -m "<message>"`
 
-![new_chapter3_b.png](../../../Imagens/Capturas de tela/learning_git/new_chapter3_b.png)
+![alt text](images/new_chapter3_b.png)
 
 ![gitgraph_chapt4.png](../_resources/gitgraph_chapt4.png)
 ![prev_chapt4.png](../_resources/prev_chapt4.png)
@@ -118,7 +117,7 @@ What to notice:
 The output of the 'git commit' command shows the first seven characters of the commit hash for the red commit, which is
 _12a73ff_.
 
-**Viewing a list of commits**
+_**Viewing a list of commits**_
 
 To view a list of commits in the commit history, you use the _'git log_'   command.
 
@@ -127,7 +126,7 @@ To view a list of commits in the commit history, you use the _'git log_'   comma
 3 - Data and time commit was made
 4 - Commit message
 
-**Chapter 4 - "Branches"**
+_**Chapter 4 - "Branches"**_
 
 _State of the local repository_
 There is one commit in the rainbow repository, the red commit.
@@ -161,7 +160,7 @@ In the rainbow repository , the main branch points to the red commit.
 What to notice:
 > In the first git status the rainbowcolors.txt in an unmodified file. It is not listed in the git status output.
 
-In the last 'git status', the rainbowcolors.txt file is a modified file.It's now çisted in the git status output.
+In the last 'git status', the rainbowcolors.txt file is a modified file.It's now listed in the git status output.
 
 The rainbowcolors.txt file is not staged for commit; in other words, it has not been added to the staging area.
 
@@ -190,11 +189,11 @@ The parent commit of the orange commit is the red commit; this is why the orange
 
 The black arrow are used to represent branch pointers.
 
-To check which commit is the parent of a given commit, you can use the _'_git cat-file -p <commit-hash>_' command with '-p' option and pass in a commit hash.
+To check which commit is the parent of a given commit, you can use the '_git cat-file -p _commit-hash_' command with '-p' option and pass in a commit hash.
 
 ![chapter4_f.png](../../../Imagens/Capturas de tela/learning_git/chapter4_f.png)
 
-_Creating a Branch_
+_**Creating a Branch**_
 
 At the moment, you only have one local branch, called **main**.
 To list branches in a local repository, you can use the `git branch` command.
@@ -227,7 +226,7 @@ There times where you can be on a commit that is not pointed to by a branch. Git
 Another way of knowing which branch you're currently on is to look at the output of either the `git branch` command or the `git log` command.
 In the `git branch` output, the branch you are currently on will have an asterisk next to it.
 
-_Switching Branches_
+_**Switching Branches**_
 
 To work on another branch (or line of development) in Git project, you have to switch onto that branch.Another way of saying this in Git terminology is that you have to "check out" another branch.
 
@@ -252,7 +251,7 @@ In the image above, the git log output shows that HEAD points to the feature bra
 
 ![860d33ac8a4b3ee995c87e20dadd4c3c.png](../_resources/860d33ac8a4b3ee995c87e20dadd4c3c.png)
 
-_Working on a separate branch_
+_**Working on a separate branch**_
 
 ![new_chapter4_e.png](../../../Imagens/Capturas de tela/learning_git/new_chapter4_e.png)
 
@@ -265,7 +264,7 @@ The main branch still points to the orange commit.
 
 ![c476fd8b24006a4d939436e9d5be9123.png](../_resources/c476fd8b24006a4d939436e9d5be9123.png)
 
-**Chapter 5 - Merging**
+_**Chapter 5 - Merging**_
 In the last chapter, you learned about branches, and we discussed how they allow you to work on the same project in different ways and to collaborate with other people on a project.
 
 In this chapter, you are going to learn about integrating changes from one branch into another.
