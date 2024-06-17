@@ -22,9 +22,9 @@ and pass in the name main.
 rainbow $ git init -b main
 ```
 
-_**Working directory**_
+![alt text](images/new_chapter2.png)
 
- ![alt text](images/new_chapter3_a.png)
+_**Working directory**_
 
   It contains the files and directories in the project directory that represent one version of a project.
   It´s like a workbench where you add, edit and delete files and directories.
@@ -42,7 +42,7 @@ version of a project that contains references to all the files that are part of 
 
 Every commit has a _hash_ (sometimes called a commit ID). This is a unique 40-character hash composed of letters and numbers that acts like a name for the commit, providing a way to refer to it.
 
-An example of a commit hash is  3e432908a9fc08e44b2ea9c37be60615fcf4739a.
+An example of a commit hash is  **3e432908a9fc08e44b2ea9c37be60615fcf4739a**
 
 In reality, you only need the first characters of a commit hash to refer to a commit. So, for the example hash just given , you can just use 3e43290 to refer to the commit.
 
@@ -78,6 +78,8 @@ rainbow $ git status
 
   Show the state of the working directory and the staging area.
 
+   ![alt text](images/new_chapter3.png)
+
  What to notice:
 
 - [ ] - [ ]  The _git status_ output informs you there are 'No commits yest'. In other words, the commit history does not contain commits at this time.
@@ -99,7 +101,7 @@ git add <filename> <filename> ...
 git add -A
 ```
 
-![alt text](images/new_chapter3_rd.png)
+![alt text](images/new_chapter3_a.png)
   
 _**Make a commit**_
 
@@ -108,10 +110,7 @@ the noun (a commit) means a version of a project.
 
 `git commit -m "<message>"`
 
-![alt text](images/new_chapter3_b.png)
-
-![gitgraph_chapt4.png](../_resources/gitgraph_chapt4.png)
-![prev_chapt4.png](../_resources/prev_chapt4.png)
+![alt text](images/new_chapter3_b.png)  
 
 What to notice:
 The output of the 'git commit' command shows the first seven characters of the commit hash for the red commit, which is
@@ -121,9 +120,9 @@ _**Viewing a list of commits**_
 
 To view a list of commits in the commit history, you use the _'git log_'   command.
 
-1 - Commit hash
-2 - Author name and e-mail address
-3 - Data and time commit was made
+1 - Commit hash  
+2 - Author name and e-mail address  
+3 - Data and time commit was made  
 4 - Commit message
 
 _**Chapter 4 - "Branches"**_
@@ -147,7 +146,7 @@ _What exactly are branches in git?_
 Branches in git are movable pointers to commits. When you list the commits in a local repository using <!-- git log -->
 command you can see information about which branches point to which commit.
 
-![new_chapter3_e.png](../../../Imagens/Capturas de tela/learning_git/new_chapter3_e.png)
+![alt text](images/new_chapter3_e.png)
 
 What to notice:
 In the git log output, next to the commit hash inside parentheses you see HEAD → main.
@@ -155,7 +154,7 @@ In the git log output, next to the commit hash inside parentheses you see HEAD �
 
 In the rainbow repository , the main branch points to the red commit.
 
-![new_chapter4.png](../../../Imagens/Capturas de tela/learning_git/new_chapter4.png)
+![alt text](images/new_chapter4.png)  
 
 What to notice:
 > In the first git status the rainbowcolors.txt in an unmodified file. It is not listed in the git status output.
@@ -166,11 +165,7 @@ The rainbowcolors.txt file is not staged for commit; in other words, it has not 
 
 You just saw the rainbowcolors.txt file went from being an unmodified file to a modified when you edit it and saved your changes.
 
-![new_chapter4_a.png](../../../Imagens/Capturas de tela/learning_git/new_chapter4_a.png)
-
-![merm_chapt4.png](../_resources/merm_chapt4.png)
-
-![preview_chapt4a.png](../_resources/preview_chapt4a.png)
+![alt text](images/new_chapter4_a.png)
 
 What to notice:
 The rainbowcolors.txt file is staged for commit; in other words, it has been added to the staging area.
@@ -179,7 +174,7 @@ You made a new commit, the orange commit.
 
 The text 'HEAD -> main' appears in parentheses next to the orange commit.
 
-![two_commits.png](../_resources/two_commits.png)
+![alt text](images/circles_chapter4_c.png)
 
 The main branch points to the orange commit.
 
@@ -191,7 +186,7 @@ The black arrow are used to represent branch pointers.
 
 To check which commit is the parent of a given commit, you can use the '_git cat-file -p _commit-hash_' command with '-p' option and pass in a commit hash.
 
-![chapter4_f.png](../../../Imagens/Capturas de tela/learning_git/chapter4_f.png)
+!![alt text](images/chapter4_f.png)
 
 _**Creating a Branch**_
 
@@ -203,19 +198,16 @@ git branch - List local branches
 
 git branch <new_branch_name>  - Create a new branch
 
-![new_chapter4_c.png](../../../Imagens/Capturas de tela/learning_git/new_chapter4_c.png)
+!![alt text](images/new_chapter4_c.png)
 
-![79d38bd6c914394b2b31b12a4aa18833.png](../_resources/79d38bd6c914394b2b31b12a4aa18833.png)
+![alt text](images/circles_new_branch.png)
+
 What to notice:
 You made a new branch called feature that points to the orange commit.
 
 In that above diagram you can see that there are now two arrows, representing the **main** and **feature** branches, pointing to the orange commit.A new branch will initially point to the commit that you were on when you made the branch.In this case, you can say that you "made the feature branch off of the main branch". That is why the feature branch and main branch both now point to the same commit.
 
 In the `git log` output in the image above, in the parentheses next to the orange commit, you should see (HEAD -> main, feature).
-
-![a43152b2dcbb988731d20ef454e81867.png](../_resources/a43152b2dcbb988731d20ef454e81867.png)
-
-![0d74eb56aea306d1997c442e3cbb7fcc.png](../_resources/0d74eb56aea306d1997c442e3cbb7fcc.png)
 
 What is HEAD?
 HEAD is simple a pointer that tells you which branch you are on. The name HEAD is always in capital letters, but this is simply a convention; it is not an acronym.
@@ -244,25 +236,20 @@ The git switch (or git checkout) command does three things when used to switch b
 2 - It populates the staging area with a snapshot of the commit you are switching onto.
 3 - It copies the contents of the staging area into the working directory.
 
-![new_chapter4_d.png](../../../Imagens/Capturas de tela/learning_git/new_chapter4_d.png)
+![alt text](images/new_chapter4_d.png)
 
 What to notice:
 In the image above, the git log output shows that HEAD points to the feature branch.
 
-![860d33ac8a4b3ee995c87e20dadd4c3c.png](../_resources/860d33ac8a4b3ee995c87e20dadd4c3c.png)
+![alt text](images/circles_head_feature.png)
 
 _**Working on a separate branch**_
 
-![new_chapter4_e.png](../../../Imagens/Capturas de tela/learning_git/new_chapter4_e.png)
+![alt text](images/new_chapter4_e.png)
 
 What to notice:
 The feature branch points to the latest commit, the yellow commit.
 The main branch still points to the orange commit.
-
-![e0bd7f3566a0c5441f41922e48746b63.png](../_resources/e0bd7f3566a0c5441f41922e48746b63.png)
-![df82f6d33bfe3ddad3390f984cad2e10.png](../_resources/df82f6d33bfe3ddad3390f984cad2e10.png)
-
-![c476fd8b24006a4d939436e9d5be9123.png](../_resources/c476fd8b24006a4d939436e9d5be9123.png)
 
 _**Chapter 5 - Merging**_
 In the last chapter, you learned about branches, and we discussed how they allow you to work on the same project in different ways and to collaborate with other people on a project.
